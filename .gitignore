@@ -1,0 +1,11 @@
+#dir
+/.settings/
+
+
+
+
+#files
+.DS_Store
+.project
+.pydevproject
+*.pyc
