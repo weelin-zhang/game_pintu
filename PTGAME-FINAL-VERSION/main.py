@@ -8,7 +8,7 @@ from tool import *
 SCREEN_W,SCREEN_H = 640,500
 MARGIN_BTW_PIC = 0
 
-SELECT_FINISH=False
+GAME_START=False
 
 PIC_NUM = 0
 PIC_INDEX = 0
@@ -169,7 +169,6 @@ def game_init():
 
 	#小图片之间的间隔
 	MARGIN_BTW_PIC = 1
-	SELECT_FINISH=False
 	#游戏图片参数
 	PIC_NUM = 0
 	PIC_INDEX = 1
@@ -184,8 +183,9 @@ def game_init():
 	#分数
 	SCORE = 0
 
+
 	#游戏图片选择完成标志
-	SELECT_FINISH=False
+	GAME_START=False
 	#更新游戏图片数目
 	for i in os.listdir('resources/images'):
 		if i.startswith('pic'):PIC_NUM = PIC_NUM+1
@@ -286,7 +286,7 @@ while True:
 				pygame.display.flip()
 			#------------------------------------------start
 			if 15<=event.pos[0]<=15+135 and 40<=event.pos[1]<=40+60:
-				SELECT_FINISH = True;continue
+				GAME_START = True;continue
 			#-------------------------------------------next
 			elif 15<=event.pos[0]<=15+135 and 140<=event.pos[1]<=140+60:
 				print 'next'
@@ -299,7 +299,7 @@ while True:
 				load_next_game('resources/images/pic'+str(PIC_INDEX)+'.jpg',DIVISION_NUM)
 
 			elif 159<=event.pos[0]<=159+322 and 259<=event.pos[1]<=259+202:
-				if SELECT_FINISH == True:
+				if GAME_START == True:
 					#print u'开始游戏'
 					pressed_croppic(event.pos)
 					#------------------------防止刷分

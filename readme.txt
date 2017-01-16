@@ -12,9 +12,12 @@
 
 点击NEXT时强制切换新素材
 
+
+新素材图片可以放到resoureces/images中，以pic+数字命名eg:pic1,...,pic11
+
+
 模块:
 import os,sys,time,random
-import Image
 import Image,pygame
 
 
